@@ -1,0 +1,19 @@
+mutation WebhookSubscriptionUpdate($id: ID!, $webhookSubscription: WebhookSubscriptionInput!) {
+  webhookSubscriptionUpdate(id: $id, webhookSubscription: $webhookSubscription) {
+    webhookSubscription {
+      id
+      topic
+      format
+      endpoint {
+        __typename
+        ... on WebhookHttpEndpoint {
+          callbackUrl
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

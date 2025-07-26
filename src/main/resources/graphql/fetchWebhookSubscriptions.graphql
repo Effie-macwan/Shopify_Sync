@@ -1,0 +1,16 @@
+query {
+  webhookSubscriptions(first: 25) {
+    edges {
+      node {
+        id
+        topic
+        format
+        endpoint {
+          ... on WebhookHttpEndpoint {
+            callbackUrl
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query getBulkOperation($id: ID!){
+  node(id: $id) {
+    ... on BulkOperation {
+      url
+      partialDataUrl
+      objectCount
+      rootObjectCount
+      status
+      errorCode
+      createdAt
+      completedAt
+    }
+  }
+}

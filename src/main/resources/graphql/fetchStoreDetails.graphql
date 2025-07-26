@@ -1,0 +1,18 @@
+query{
+  shop{
+    id
+    name
+    email
+    myshopifyDomain
+    currencyCode
+    createdAt
+    url
+    shopOwnerName
+    weightUnit
+    shipsToCountries
+    ianaTimezone
+    plan{
+      displayName
+    }
+  }
+}

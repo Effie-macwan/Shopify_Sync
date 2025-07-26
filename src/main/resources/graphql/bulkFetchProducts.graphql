@@ -1,0 +1,66 @@
+mutation bulkOperationRunQuery{
+  bulkOperationRunQuery(query:"""
+    query getProducts {
+      products{
+        edges {
+          node {
+            id
+            title
+            description
+            descriptionHtml
+            status
+            tags
+            vendor
+            createdAt
+            updatedAt
+            featuredMedia {
+              id
+              preview {
+                image {
+                  url
+                }
+              }
+            }
+            category {
+              name
+            }
+            variants {
+              edges {
+                node {
+                  id
+                  title
+                  sku
+                  price
+                  compareAtPrice
+                  createdAt
+                  updatedAt
+                  selectedOptions {
+                    name
+                    value
+                  }
+                  image {
+                    id
+                    url
+                  }
+                  inventoryItem {
+                    id
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  """
+  ){
+    bulkOperation{
+      id
+      status
+    }
+    userErrors{
+      code
+      message
+    }
+  }
+}

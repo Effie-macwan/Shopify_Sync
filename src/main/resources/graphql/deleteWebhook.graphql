@@ -1,0 +1,8 @@
+mutation webhookSubscriptionDelete($id: ID!) {
+  webhookSubscriptionDelete(id: $id) {
+    userErrors {
+      message
+    }
+    deletedWebhookSubscriptionId
+  }
+}
